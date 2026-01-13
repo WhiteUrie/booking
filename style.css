@@ -308,8 +308,7 @@ input[type="number"] {
 }
 
 .image-counter {
-  text-align: center;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 700;
   margin-bottom: 8px;
 }
@@ -322,11 +321,38 @@ input[type="number"] {
 }
 
 .image-preview img {
-  width: 100px; 
-  height: 100px;
+  width: 225px; 
+  height: 225px;
   object-fit: cover;
   border-radius: 12px;
   border: 3px solid var(--primary);
+}
+
+/* ===== IMAGE PREVIEW ITEM ===== */
+.preview-item {
+  position: relative;
+  display: inline-block;
+}
+
+/* ===== REMOVE IMAGE BUTTON ===== */
+.preview-item .remove-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  background: #ff3b3b;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 28px;
+  text-align: center;
+  cursor: pointer;
+  z-index: 2;
+  padding: 0;
 }
 
 /* =====================================================

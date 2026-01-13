@@ -1,17 +1,25 @@
+/* =====================================================
+   ELEMENTS
+===================================================== */
 const input = document.getElementById("product-image");
 const preview = document.getElementById("imagePreview");
 const counter = document.getElementById("imageCounter");
 const form = document.querySelector(".order-form");
 
-
-
+/* =====================================================
+   CONSTANTS & STATE
+===================================================== */
 const MAX_IMAGES = 3;
-let images = []; 
+let images = [];
 
-/* ===== INIT ===== */
+/* =====================================================
+   INIT
+===================================================== */
 counter.style.display = "none";
 
-/* ===== FILE CHANGE ===== */
+/* =====================================================
+   FILE INPUT CHANGE
+===================================================== */
 input.addEventListener("change", () => {
   const files = Array.from(input.files);
 
@@ -22,7 +30,7 @@ input.addEventListener("change", () => {
   }
 
   files.forEach(file => {
-    resizeImage(file, 256,256, blob => {
+    resizeImage(file, 225, 225, blob => {
       images.push({
         blob,
         url: URL.createObjectURL(blob)
@@ -34,7 +42,9 @@ input.addEventListener("change", () => {
   input.value = "";
 });
 
-/* ===== RENDER PREVIEW ===== */
+/* =====================================================
+   RENDER IMAGE PREVIEW
+===================================================== */
 function renderPreview() {
   preview.innerHTML = "";
 
@@ -51,14 +61,17 @@ function renderPreview() {
 
     const img = document.createElement("img");
     img.src = item.url;
+    img.alt = "preview";
 
     const removeBtn = document.createElement("button");
-    removeBtn.className = "preview-remove";
+    removeBtn.type = "button";
+    removeBtn.className = "remove-image";
     removeBtn.textContent = "×";
-    removeBtn.onclick = () => {
+
+    removeBtn.addEventListener("click", () => {
       images.splice(index, 1);
       renderPreview();
-    };
+    });
 
     wrapper.appendChild(img);
     wrapper.appendChild(removeBtn);
@@ -66,7 +79,9 @@ function renderPreview() {
   });
 }
 
-/* ===== RESIZE IMAGE ===== */
+/* =====================================================
+   IMAGE RESIZE (CANVAS)
+===================================================== */
 function resizeImage(file, width, height, callback) {
   const reader = new FileReader();
 
@@ -80,7 +95,11 @@ function resizeImage(file, width, height, callback) {
       const ctx = canvas.getContext("2d");
       ctx.drawImage(img, 0, 0, width, height);
 
-      canvas.toBlob(blob => callback(blob), "image/jpeg", 0.9);
+      canvas.toBlob(
+        blob => callback(blob),
+        "image/jpeg",
+        0.9
+      );
     };
     img.src = e.target.result;
   };
@@ -88,75 +107,58 @@ function resizeImage(file, width, height, callback) {
   reader.readAsDataURL(file);
 }
 
-/* ===== SUBMIT ===== */
-form.addEventListener("submit", e => {
-  e.preventDefault();
-
-  const formData = new FormData();
-  images.forEach((img, index) => {
-    formData.append(`images[${index}]`, img.blob, `image_${index + 1}.jpg`);
-  });
-
-  console.log("Submit:", images.length, "ảnh (đúng thứ tự)");
-});
-
-/* ===============================
-   BACKEND DISPLAY HANDLER
-================================ */
-
-/* Format tiền VND */
+/* =====================================================
+   BACKEND DISPLAY
+===================================================== */
 function formatVND(value) {
-  if (value === null || value === undefined) return "";
-  return value.toLocaleString("vi-VN") + " VND";
+  return value.toLocaleString("vi-VN") + " đ";
 }
 
-/* Render dữ liệu backend lên UI */
 function renderBackendData(data) {
-  // User name
-  const userNameEl = document.querySelector(".user-value");
-  if (userNameEl && data.user?.name) {
-    userNameEl.textContent = data.user.name;
-  }
-
-  // Distance
-  const distanceEl = document.getElementById("distanceValue");
-  if (distanceEl && data.distanceKm !== undefined) {
-    distanceEl.value = data.distanceKm + " km";
-  }
-
-  // Price estimate
   const priceMinEl = document.getElementById("priceMin");
   const priceMaxEl = document.getElementById("priceMax");
+  const distanceEl = document.getElementById("distanceValue");
 
-  if (priceMinEl && data.priceEstimate?.min !== undefined) {
-    priceMinEl.value = formatVND(data.priceEstimate.min);
+  if (priceMinEl && data.price_min !== undefined) {
+    priceMinEl.textContent = formatVND(data.price_min);
   }
 
-  if (priceMaxEl && data.priceEstimate?.max !== undefined) {
-    priceMaxEl.value = formatVND(data.priceEstimate.max);
+  if (priceMaxEl && data.price_max !== undefined) {
+    priceMaxEl.textContent = formatVND(data.price_max);
   }
 
-  // Insurance
-  const insuranceEl = document.getElementById("insuranceValue");
-  if (insuranceEl && data.insuranceValue !== undefined) {
-    insuranceEl.value = formatVND(data.insuranceValue);
+  if (distanceEl && data.distance_km !== undefined) {
+    distanceEl.textContent = data.distance_km + " km";
   }
 }
 
-/* ===============================
-   MOCK BACKEND RESPONSE
-================================ */
+/* =====================================================
+   MOCK BACKEND (TEST)
+===================================================== */
 const backendData = {
   price_min: 120000,
   price_max: 180000,
   distance_km: 15.6
 };
 
-document.getElementById("priceMin").textContent =
-  backendData.price_min.toLocaleString("vi-VN") + " đ";
+renderBackendData(backendData);
 
-document.getElementById("priceMax").textContent =
-  backendData.price_max.toLocaleString("vi-VN") + " đ";
+/* =====================================================
+   FORM SUBMIT
+===================================================== */
+form.addEventListener("submit", e => {
+  e.preventDefault();
 
-document.getElementById("distanceValue").textContent =
-  backendData.distance_km + " km";
+  const formData = new FormData();
+
+  images.forEach((img, index) => {
+    formData.append(
+      `images[${index}]`,
+      img.blob,
+      `image_${index + 1}.jpg`
+    );
+  });
+
+  console.log("Submit OK:", images.length, "ảnh");
+  // fetch("/api/submit", { method: "POST", body: formData })
+});
