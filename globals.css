@@ -1,0 +1,63 @@
+/* =====================================================
+   GLOBAL RESET & BASE
+===================================================== */
+
+/* Reset chuẩn (Meyer Reset) */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+/* Box sizing & font smoothing */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Base document */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Base typography (fallback nếu styleguide chưa load) */
+body {
+  font-family: Inter, Helvetica, Arial, sans-serif;
+  background-color: #ffffff;
+  color: #0b3cc1;
+  line-height: 1.5;
+}
+
+/* Remove default link styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Button reset */
+button {
+  font-family: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Accessible focus style */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 2px solid #4a90e2;
+  outline-offset: 2px;
+}
+
+/* Image defaults */
+img {
+  max-width: 100%;
+  display: block;
+}

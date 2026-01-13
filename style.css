@@ -1,0 +1,394 @@
+/* =====================================================
+   LAYOUT BASE
+===================================================== */
+.desktop {
+  width: 100%;
+  background: #ffffff;
+  color: #0b3cc1;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+/* =====================================================
+   COMMON VARIABLES 
+===================================================== */
+:root {
+  --primary: #f97316;
+  --primary-light: #f0a7734c;
+  --text-main: #0b3cc1;
+  --radius-lg: 20px;
+  --border-lg: 4px solid var(--primary);
+  --input-height: 64px;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+.header-section {
+  width: 95%; 
+  max-width: 1264px; 
+  margin: 36px auto 0;
+  padding: 10px 20px; 
+  background: #fff0e6;
+  border: var(--border-lg);
+  border-radius: var(--radius-lg);
+  box-sizing: border-box; 
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; 
+  gap: 10px;
+}
+
+.logoholder {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logoicon {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+
+.text-wrapper-14 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #000;
+}
+
+@media (max-width: 900px) {
+  .text-wrapper-14 { font-size: 32px; }
+  .logoicon { width: 50px; height: 50px; }
+}
+
+/* =====================================================
+   USER INFO
+===================================================== */
+.frame,
+.frame-2 {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.frame-2 {
+  gap: 12px;
+}
+
+.ellipse {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #d9d9d9;
+  flex-shrink: 0;
+}
+
+.username {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.user-value {
+  font-size: 14px;
+  font-weight: 700;
+  color: #000;
+  white-space: nowrap;
+}
+
+/* =====================================================
+   BUTTON BASE
+===================================================== */
+.button,
+.rectangle-3,
+.rectangle-10,
+.rectangle-11 {
+  background: var(--primary-light);
+  border: var(--border-lg);
+  border-radius: var(--radius-lg);
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  white-space: nowrap;
+  padding: 0 20px;
+}
+
+.button {
+    height: 50px; 
+}
+
+/* =====================================================
+   MAIN FORM
+===================================================== */
+.main-content {
+  width: 100%;
+  margin-top: 40px;
+  padding-bottom: 40px;
+}
+
+.text-wrapper-8 {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 32px;
+}
+
+.order-form {
+  width: 95%;
+  max-width: 740px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.form-group label {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* =====================================================
+   INPUT BASE
+===================================================== */
+input[type="text"],
+input[type="number"] {
+  width: 100%; 
+  height: var(--input-height);
+  border-radius: var(--radius-lg);
+  border: var(--border-lg);
+  background: var(--primary-light);
+  padding: 0 20px;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-main);
+  box-sizing: border-box; 
+}
+
+/* =====================================================
+   SIZE INPUT 
+===================================================== */
+.size-type-row {
+  margin-top: 8px;
+}
+
+.size-type-label {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.size-inputs {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  gap: 10px;
+  width: 100%; 
+  margin: 12px auto 0;
+}
+
+.size-inputs input {
+  flex: 1; 
+  width: auto;
+  text-align: center;
+  min-width: 0; 
+  padding: 0 5px;
+}
+
+.separator {
+  height: var(--input-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--text-main);
+  margin: 0;
+  flex-shrink: 0;
+}
+
+/* =====================================================
+   DISPLAY BOX 
+===================================================== */
+.display-box,
+.total-fee-value {
+  height: var(--input-height);
+  border-radius: var(--radius-lg);
+  border: var(--border-lg);
+  background: var(--primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-main);
+  box-sizing: border-box;
+}
+
+/* =====================================================
+   DISTANCE 
+===================================================== */
+.distance-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.distance-display .display-box {
+  width: 100%;
+  max-width: 460px;
+}
+
+/* =====================================================
+   PRICE RANGE (MIN – MAX)
+===================================================== */
+.price-range-box {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.price-range-box .display-box {
+  flex: 1;
+  max-width: 260px;
+  width: auto;
+}
+
+/* =====================================================
+   TOTAL FEE (Nếu có dùng)
+===================================================== */
+.total-fee-value {
+  width: 100%;
+  max-width: 460px;
+  margin: 0 auto;
+}
+
+/* =====================================================
+   FILE UPLOAD & IMAGE
+===================================================== */
+.file-upload-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.file-input {
+  display: none;
+}
+
+.rectangle-3 {
+  width: 100%;
+  max-width: 260px;
+  height: var(--input-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-preview-wrapper {
+  margin-top: 12px;
+}
+
+.image-counter {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.image-preview {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap; 
+}
+
+.image-preview img {
+  width: 100px; 
+  height: 100px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 3px solid var(--primary);
+}
+
+/* =====================================================
+   ACTION BUTTONS
+===================================================== */
+.form-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.rectangle-10,
+.rectangle-11 {
+  width: 261px;
+  height: 65px;
+  font-size: 24px;
+  max-width: 100%;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+.footer {
+  width: 100%;
+  margin-top: 80px;
+  text-align: center;
+}
+
+.rectangle-12 {
+  height: 100px;
+  background: #13224a;
+  width: 100%;
+}
+
+.text-wrapper-13 {
+  position: relative;
+  color: #b6b5b5;
+  font-size: 16px;
+  margin-top: -80px;
+  padding-top: 24px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.text-wrapper-13::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  margin-bottom: 16px;
+}
+
+/* =====================================================
+   INTERACTIONS
+===================================================== */
+.button:hover,
+.rectangle-3:hover,
+.rectangle-10:hover,
+.rectangle-11:hover {
+  background: var(--primary);
+  color: #ffffff;
+}

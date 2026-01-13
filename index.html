@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shipway - Tạo đơn</title>
+
+  <!-- Global styles -->
+  <link rel="stylesheet" href="globals.css" />
+  <link rel="stylesheet" href="styleguide.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="mobile.css" />
+</head>
+
+<body>
+  <div class="desktop">
+
+    <!-- HEADER -->
+    <header class="header-section">
+      <div class="header">
+        <div class="logoholder">
+          <img class="logoicon" src="img/logoshipway.png" alt="Shipway" />
+          <div class="text-wrapper-14">Shipway</div>
+        </div>
+
+        <div class="frame">
+          <div class="frame-2">
+            <div class="ellipse"></div>
+            <div class="username">
+              <span class="label">User name</span>
+              <span class="user-value">Nguyễn Văn A</span>
+            </div>
+          </div>
+          <button class="button">Đăng xuất</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="main-content">
+      <h1 class="text-wrapper-8">Tạo đơn</h1>
+
+      <form class="order-form">
+
+        <div class="form-group">
+          <label>Điểm nhận hàng</label>
+          <input type="text" />
+        </div>
+
+        <div class="form-group">
+          <label>Điểm trả hàng</label>
+          <input type="text" />
+        </div>
+        
+        <div class="form-group distance-display">
+          <label>Tổng quãng đường (KM)</label>
+          <div class="display-box" id="distanceValue">-  -  -</div>
+        </div>
+
+        <div class="form-group">
+          <label>Tên hàng hóa</label>
+          <input type="text" />
+        </div>
+
+        <div class="form-group">
+          <label>Trọng lượng hàng hóa (Kg)</label>
+          <input type="text" />
+        </div>
+
+        <div class="size-type-row">
+          <span class="size-type-label">Kích thước (met):</span>
+        </div>
+
+        <div class="size-inputs">
+          <input type="text" placeholder="Dài">
+          <span class="separator">;</span>
+          <input type="text" placeholder="Rộng">
+          <span class="separator">;</span>
+          <input type="text" placeholder="Cao">
+        </div>
+
+        <div class="form-group price-range">
+          <label>Giá ước tính (VND)</label>
+          <div class="price-range-box">
+            <div class="display-box" id="priceMin">Min</div>
+            <div class="display-box" id="priceMax">Max</div>
+          </div>
+        </div>
+
+        <!-- UPLOAD IMAGE -->
+        <div class="form-group">
+          <label>Ảnh hàng hóa</label>
+
+          <div class="file-upload-wrapper">
+            <input
+              type="file"
+              id="product-image"
+              class="file-input"
+              accept="image/*"
+              multiple
+            />
+            <label for="product-image" class="rectangle-3">Chọn ảnh</label>
+          </div>
+
+          <div class="image-preview-wrapper">
+            <div class="image-counter" id="imageCounter">0/3</div>
+            <div class="image-preview" id="imagePreview"></div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Giá thương lượng</label>
+          <input type="text" />
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="rectangle-10">Quay lại</button>
+          <button type="submit" class="rectangle-11">Xác nhận</button>
+        </div>
+
+      </form>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="rectangle-12"></div>
+      <p class="text-wrapper-13">
+        © 2025 Công ty Cổ phần Shipway. All rights reserved.
+      </p>
+    </footer>
+  </div>
+
+  <!-- JS -->
+  <script src="main.js" defer></script>
+</body>
+</html>
