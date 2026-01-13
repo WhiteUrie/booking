@@ -1,0 +1,244 @@
+@media (max-width: 768px) {
+  .desktop {
+    width: 100%;
+    min-width: 0 !important;
+    overflow-x: hidden;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .header-section {
+    width: 100%;
+    margin-top: 0;
+    border-radius: 0 0 20px 20px;
+    border: none;
+    padding: 16px 12px;
+    background-color: #ffffff;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    justify-content: center;
+  }
+
+  .logoholder {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .logoicon {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+  }
+
+  .text-wrapper-14 {
+    font-size: 28px;
+    font-weight: 700;
+  }
+
+  .frame {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .frame-2 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .ellipse {
+    width: 32px;
+    height: 32px;
+  }
+
+  .username .label {
+    display: none;
+  }
+
+  .user-value {
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .button {
+    font-size: 12px;
+    height: 34px;
+    padding: 0 12px;
+    border-width: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .main-content {
+    margin-top: 20px;
+    padding: 0 16px;
+    box-sizing: border-box;
+  }
+
+  .text-wrapper-8 {
+    font-size: 28px;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+
+  .order-form {
+    width: 100%;
+    max-width: 100%;
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-group label,
+  .size-type-label {
+    font-size: 16px;
+    margin-bottom: 6px;
+    display: block;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  .display-box,
+  .rectangle-3 {
+    height: 52px;
+    font-size: 16px;
+    padding: 0 12px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .distance-display .display-box {
+    width: 100%;
+    max-width: none;
+  }
+
+  .size-inputs {
+    display: flex !important;
+    flex-direction: row !important;
+    width: 100%;
+    gap: 6px;
+    align-items: center;
+  }
+
+  .size-inputs input {
+    flex: 1;
+    width: auto;
+    font-size: 14px;
+    padding: 0 4px;
+    text-align: center;
+  }
+
+  .separator {
+    font-size: 20px;
+    margin: 0 2px;
+  }
+
+  .price-range-box {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .price-range-box .display-box {
+    width: 100%;
+    max-width: none;
+  }
+
+  .image-preview {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .image-preview img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .form-actions {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 10px;
+    margin-top: 24px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .rectangle-10,
+  .rectangle-11 {
+    flex: 1 !important;
+    width: auto !important;
+    height: 54px !important;
+    font-size: 16px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    max-width: none;
+  }
+
+  .footer {
+    margin-top: 40px;
+    position: relative;
+  }
+
+  .rectangle-12 {
+    height: 80px;
+    width: 100%;
+  }
+
+  .text-wrapper-13 {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: #666;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 360px) {
+  .text-wrapper-14 {
+    font-size: 20px;
+  }
+
+  .button {
+    display: none;
+  }
+
+  .header-section {
+    padding: 12px 8px;
+  }
+
+  .logoicon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .rectangle-10,
+  .rectangle-11 {
+    font-size: 14px !important;
+  }
+}

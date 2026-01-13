@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="globals.css" />
   <link rel="stylesheet" href="styleguide.css" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="mobile.css" />
 </head>
 
 <body>
@@ -64,7 +63,7 @@
 
         <div class="form-group">
           <label>Trọng lượng hàng hóa (Kg)</label>
-          <input type="text" />
+          <input type="text" class="weight-input" placeholder="0" />
         </div>
 
         <div class="size-type-row">
@@ -72,11 +71,11 @@
         </div>
 
         <div class="size-inputs">
-          <input type="text" placeholder="Dài">
+          <input type="text" class="size-input" placeholder="Dài">
           <span class="separator">;</span>
-          <input type="text" placeholder="Rộng">
+          <input type="text" class="size-input" placeholder="Rộng">
           <span class="separator">;</span>
-          <input type="text" placeholder="Cao">
+          <input type="text" class="size-input" placeholder="Cao">
         </div>
 
         <div class="form-group price-range">
@@ -88,10 +87,10 @@
         </div>
 
         <div class="form-group">
-          <label>Giá thương lượng</label>
-          <input type="text" />
+          <label>Giá thương lượng (VND)</label>
+          <input type="text" class="price-input" placeholder="0" />
         </div>
-        
+
         <!-- UPLOAD IMAGE -->
         <div class="form-group">
           <label>Ảnh hàng hóa</label>
